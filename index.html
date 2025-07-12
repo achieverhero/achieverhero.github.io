@@ -3,136 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Achiever Hero | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Onyebuagu Achiever Hero | Cybersecurity & AI Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reset.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css" />
   <style>
+    :root {
+      --primary-bg: linear-gradient(to right, #eef2f3, #8e9eab);
+      --text-color: #222;
+      --header-bg: linear-gradient(to right, #1e3c72, #2a5298);
+      --section-bg: #ffffffcc;
+      --highlight: #1e3c72;
+      --accent: #2a5298;
+    }
+
+    [data-theme="dark"] {
+      --primary-bg: #121212;
+      --text-color: #f5f5f5;
+      --header-bg: #0a0a0a;
+      --section-bg: #1f1f1f;
+      --highlight: #64b5f6;
+      --accent: #bb86fc;
+    }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      background: var(--primary-bg);
+      color: var(--text-color);
+      transition: background 0.5s ease, color 0.5s ease;
     }
-    header {
-      background-color: #00b894;
-      padding: 40px 20px;
+    header, footer {
+      background: var(--header-bg);
+      color: white;
+      padding: 1.5rem 2rem;
       text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
+      transition: background 0.5s ease;
     }
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+      background-color: var(--section-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      transition: background 0.5s ease;
     }
     h2 {
-      color: #00cec9;
-      border-bottom: 2px solid #00cec9;
-      padding-bottom: 5px;
+      border-bottom: 3px solid var(--highlight);
+      padding-bottom: 0.5rem;
+      color: var(--highlight);
+    }
+    h3 {
+      color: var(--accent);
     }
     ul {
-      list-style: square;
-      padding-left: 20px;
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin: 0.6rem 0;
+    }
+    .projects img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .projects img:hover {
+      transform: scale(1.03);
+    }
+    .project-card {
+      margin-bottom: 2rem;
     }
     a {
-      color: #81ecec;
+      color: var(--highlight);
       text-decoration: none;
+      transition: color 0.3s ease;
     }
     a:hover {
       text-decoration: underline;
     }
-    .section {
-      margin-bottom: 40px;
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 10px;
+    .theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: white;
+      color: #222;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #00b894;
-      margin-top: 40px;
+    .cv-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--highlight);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .cv-button:hover {
+      background-color: var(--accent);
     }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header>
     <h1>Onyebuagu Achiever Hero</h1>
-    <p>Emerging Cybersecurity Professional | Red Team Enthusiast | Security Analyst in Training</p>
+    <p>Cybersecurity | AI/ML | AWS | Offensive Security Enthusiast</p>
   </header>
 
   <div class="container">
     <div class="section">
       <h2>About Me</h2>
-      <p>I’m an enthusiastic and detail-oriented cybersecurity learner currently undergoing training in <strong>Cybersecurity and Ethical Hacking</strong> at <strong>Sabi Programmers</strong>. With a strong interest in red teaming, penetration testing, and digital forensics, I enjoy solving real-world problems and improving my skills through continuous hands-on practice.</p>
+      <p>I am a cybersecurity professional-in-training with deep curiosity in red teaming, ethical hacking, and the intersection of AI with cybersecurity. I’ve completed multiple simulations and industry-recognized learning programs such as Cisco's Introduction to Cybersecurity and Mastercard’s Shields Up. I'm also actively learning tools like Wireshark, Nmap, and Burp Suite while preparing for globally recognized certifications such as Security+, CEH, and OSCP.</p>
+      <p>Recently, I began exploring AWS cloud security practices and machine learning models that can detect anomalies in log files. I believe in continuous learning, and I bring both technical discipline and storytelling to cybersecurity problem-solving.</p>
+      <a class="cv-button" href="CV_Achiever_Hero.pdf" download>Download My CV</a>
     </div>
 
     <div class="section">
-      <h2>Skills</h2>
+      <h2>My Experience</h2>
       <ul>
-        <li>Cybersecurity principles and threat analysis</li>
-        <li>Ethical hacking methodologies and practices</li>
-        <li>Network fundamentals (TCP/IP, OSI model, DNS, DHCP, IP addressing)</li>
-        <li>Security tools: Nmap, Wireshark, Burp Suite, Metasploit (basics)</li>
-        <li>Red teaming and penetration testing fundamentals</li>
-        <li>Linux basics and terminal commands</li>
-        <li>Report writing and analysis of pentest results</li>
+        <li><strong>Redynox Cybersecurity Internship:</strong> Performed vulnerability scanning and traffic analysis using Nmap and Wireshark. Learned team reporting structure and defensive practices.</li>
+        <li><strong>Sabi Programmers Training:</strong> Hands-on training in penetration testing, digital forensics, Linux tools, and real-time reconnaissance.</li>
+        <li><strong>AI Model Development:</strong> Built ML anomaly detection scripts using Python and integrated findings into reporting tools.</li>
+        <li><strong>AWS Cloud Lab:</strong> Launched EC2 instances, configured IAM policies, deployed secure environments and logging systems.</li>
       </ul>
     </div>
 
+    <div class="section projects">
+      <h2>Featured Projects</h2>
+      <div class="project-card">
+        <h3>Nmap Live Host Scan</h3>
+        <p>Conducted host discovery across a subnet using Nmap with proxychains for anonymous scanning. Parsed results for open ports and OS fingerprints.</p>
+        <img src="images/nmap-scan.png" alt="Nmap scan screenshot" />
+      </div>
+      <div class="project-card">
+        <h3>Wireshark HTTP Credential Capture</h3>
+        <p>Captured and dissected unencrypted HTTP packets to retrieve login credentials and detect insecure protocols in practice environments.</p>
+        <img src="images/wireshark-capture.png" alt="Wireshark capture screenshot" />
+      </div>
+      <div class="project-card">
+        <h3>AI-Powered Log Anomaly Detector</h3>
+        <p>Used machine learning (scikit-learn) to train a model that identifies abnormal login patterns from logs. Visualized results using Matplotlib.</p>
+        <img src="images/ai-model.png" alt="AI model screenshot" />
+      </div>
+      <div class="project-card">
+        <h3>Secure AWS Architecture</h3>
+        <p>Set up a hardened AWS cloud environment using EC2, IAM, and S3. Logged system access and simulated attacks for blue team practice.</p>
+        <img src="images/aws-ec2.png" alt="AWS EC2 screenshot" />
+      </div>
+    </div>
+
     <div class="section">
-      <h2>Projects</h2>
+      <h2>Certifications & Programs</h2>
       <ul>
-        <li>
-          <strong>Nmap Notes:</strong> Compilation of common Nmap commands, outputs, and their usage.<br />
-          <a href="https://github.com/achieverhero/nmap-notes" target="_blank">🔗 View on GitHub</a>
-        </li>
-        <li>
-          <strong>Red Teaming Basics:</strong> A beginner-friendly guide to common tools and scenarios in red teaming.<br />
-          <em>(Coming Soon)</em>
-        </li>
+        <li><strong>Cisco:</strong> Introduction to Cybersecurity</li>
+        <li><strong>Mastercard & AIG:</strong> Shields Up Cybersecurity Virtual Experience</li>
+        <li><strong>Ongoing Prep:</strong> Security+, CEH, OSCP</li>
       </ul>
-    </div>
-
-    <div class="section">
-      <h2>Certifications & Learning</h2>
-      <ul>
-        <li>Cisco Networking Academy: Introduction to Cybersecurity</li>
-        <li>Virtual Internships: Mastercard & AIG Shields Up Simulation</li>
-        <li><strong>Currently Pursuing:</strong> CompTIA Security+, CEH, OSCP</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Education</h2>
-      <p>Currently studying Cybersecurity and Ethical Hacking<br /><strong>Institution:</strong> Sabi Programmers<br /><strong>Certificate:</strong> Cybersecurity Diploma (in view)</p>
-    </div>
-
-    <div class="section">
-      <h2>Work Experience</h2>
-      <p><strong>Primary School Teacher</strong><br />
-      Frank Unique Nursery and Primary School, Nigeria<br />
-      <em>2021 – Present</em><br />
-      Responsibilities: Teaching and mentoring Primary 6 pupils, integrating basic digital literacy when possible.</p>
     </div>
 
     <div class="section">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:achieverhero@proton.me">achieverhero@proton.me</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/achiever-onyebuagu-267958369" target="_blank">View Profile</a></p>
-      <p>GitHub: <a href="https://github.com/achieverhero" target="_blank">github.com/achieverhero</a></p>
-      <p>Location: Nigeria</p>
+      <p>Email: <a href="mailto:onyebuaguachieverhero@gmail.com">onyebuaguachieverhero@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/achieverhero" target="_blank">achieverhero</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/achiever-onyebuagu-267958369/" target="_blank">Onyebuagu Achiever Hero</a></p>
     </div>
   </div>
 
   <footer>
     <p>© 2025 Onyebuagu Achiever Hero. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+  </script>
 </body>
 </html>
+
